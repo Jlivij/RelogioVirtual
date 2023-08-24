@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Relogio com JavaScript</title>
+    <link rel="stylesheet" type="text/css" href="Esilização.css">
+    <link href='https://fonts.googleapis.com/css?family=Oxanium' rel='stylesheet'>
+    <script language= JavaScript> 
+    function moveRelogio(){
+    momentoAtual = new Date()
+    hora = momentoAtual.getHours()
+    minuto = momentoAtual.getMinutes()
+    segundo = momentoAtual.getSeconds()
+    horaImprimivel = hora + ":" + minuto + ":" + segundo
+    document.form_relogio.relogio.value = horaImprimivel
+    setTimeout("moveRelogio()",1000)
+    }
+</script>
+<style>
+
+    body {
+            font-family: Arial, sans-serif;
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        section {
+            background-color: #222;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            display: inline-block;
+        }
+
+        h1{
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        #relogio {
+            font-size: 36px; /* Aumenta o tamanho da fonte para torná-lo mais digital */
+            background-color: transparent;
+            border: none;
+            color: #00ff00; /* Define a cor do texto para verde */
+            text-align: center;
+            width: 200px; /* Ajusta a largura para acomodar o formato digital */
+            margin: 10px;
+            padding: 5px;
+            font-family: "Courier New", monospace;
+        }
+    </style>
+</head>
+<body onload= moveRelogio()>
+    <h1>Olha a hora</h1>
+    
+    <form name = "form_relogio">
+        <input type="text" name="relogio" size="10">
+    </form>
+</body>
+</html>
